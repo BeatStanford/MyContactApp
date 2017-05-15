@@ -15,6 +15,7 @@
         tools:layout_editor_absoluteY="30dp" />
 
     <EditText
+        android:id="@+id/editText_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -26,7 +27,26 @@
         android:id="@+id/button_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="addData"
         android:text="Add Contact"
-        tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="335dp" />
+        tools:layout_editor_absoluteX="76dp"
+        tools:layout_editor_absoluteY="333dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="101dp" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="99dp"
+        tools:layout_editor_absoluteY="84dp" />
+
 </android.support.constraint.ConstraintLayout>
