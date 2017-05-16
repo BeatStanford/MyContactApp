@@ -49,4 +49,13 @@
         tools:layout_editor_absoluteX="99dp"
         tools:layout_editor_absoluteY="84dp" />
 
+    <Button
+        android:id="@+id/view_contacts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="getAllData"
+        android:text="Button"
+        tools:layout_editor_absoluteX="266dp"
+        tools:layout_editor_absoluteY="333dp" />
+
 </android.support.constraint.ConstraintLayout>
