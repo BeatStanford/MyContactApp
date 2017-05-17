@@ -14,12 +14,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "Contact.db";
     public static final String TABLE_NAME = "contact_table";
-    public static final String COL_1 = "ID";
-    public static final String COL_2 = "NAME";
+    public static final String COL_1 = "NAME";
+    public static final String COL_2 = "Email";
+    public static final String COL_3 = "Phone Number";
+    public static final String COL_4 = "Address";
 
     public DatabaseHelper(Context context) {
 
-        super(context, DATABASE_NAME, null, 1);
+        super(context, DATABASE_NAME, null, 1); //update 1 to 2, to fix some problems.
     }
 
     @Override
