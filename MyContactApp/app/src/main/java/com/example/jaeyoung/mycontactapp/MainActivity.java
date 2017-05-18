@@ -10,12 +10,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import static com.example.jaeyoung.mycontactapp.R.id.editText_address;
+import static com.example.jaeyoung.mycontactapp.R.id.editText_email;
+import static com.example.jaeyoung.mycontactapp.R.id.editText_name;
+import static com.example.jaeyoung.mycontactapp.R.id.editText_phoneNumber;
+
 public class MainActivity extends AppCompatActivity {
 
     DatabaseHelper myDb;
     EditText editName;
     //add some more fields
-    Button btnAddData;
+    Button btnAddData; //use this for the add contact button
+    Button btnViewData; //use this for the view contact button
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         myDb = new DatabaseHelper(this);
 
         //Add the layout variables:
-        editName = (EditText) findViewById(R.id.editText_name);
+        editName = (EditText) findViewById(editText_name);
     }
 
     public void addData (View v) {
@@ -55,6 +61,14 @@ public class MainActivity extends AppCompatActivity {
         *look for a method in the string buffer class that lets you append id, name, email, etc.
         * display the message using the showMessage
         */
+        while(res.moveToNext()) {
+            //inside loop, append each column to the buffer
+            buffer.append(editName);
+            buffer.append(editText_address);
+            buffer.append(editText_name);
+            buffer.append(editText_phoneNumber);
+            buffer.append(editText_email);
+        }
         showMessage("Data", buffer.toString());
     }
 
