@@ -66,65 +66,109 @@
         app:layout_constraintTop_toBottomOf="@+id/editText_phoneNumber" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/NAME_Label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NAME"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="50dp"
         android:layout_marginTop="50dp"
-        android:layout_marginLeft="50dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        android:text="NAME"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/Email_Label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Email"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="50dp"
         android:layout_marginTop="125dp"
-        android:layout_marginLeft="50dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        android:text="Email"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/phoneNumber_Label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Phone Number"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="210dp"
         android:layout_marginLeft="40dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        android:layout_marginTop="210dp"
+        android:text="Phone Number"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/Address_Label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Address"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="300dp"
         android:layout_marginLeft="50dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        android:layout_marginTop="300dp"
+        android:text="Address"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/add_contact"
+        android:id="@+id/add_contact_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="400dp"
+        android:layout_marginLeft="31dp"
+        android:layout_marginTop="343dp"
         android:onClick="addData"
         android:text="Add Contact"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/view_contacts"
+        android:id="@+id/view_contacts_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="400dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="343dp"
         android:onClick="viewData"
         android:text="View Contacts"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/SearchData"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginRight="300dp"
+        android:layout_marginTop="500dp"
+        android:onClick="searchEntry"
+        android:text="Search"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_marginRight="30dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="500dp" />
+
+    <EditText
+        android:id="@+id/editText_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="395dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/Search_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="395dp"
+        android:onClick="searchEntry"
+        android:text="Search"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

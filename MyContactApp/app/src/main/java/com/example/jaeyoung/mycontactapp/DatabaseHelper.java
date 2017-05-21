@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 /**
  * Created by Jaeyoung on 5/11/2017.
@@ -14,19 +15,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "Contact.db";
     public static final String TABLE_NAME = "contact_table";
-    public static final String COL_1 = "NAME";
-    public static final String COL_2 = "Email";
-    public static final String COL_3 = "Phone Number";
-    public static final String COL_4 = "Address";
+    public static final String COL_1 = "ID";
+    public static final String COL_2 = "NAME";
+    public static final String COL_3 = "Email";
+    public static final String COL_4 = "Phone Number";
+    public static final String COL_5 = "Address";
+
 
     public DatabaseHelper(Context context) {
 
-        super(context, DATABASE_NAME, null, 1); //update 1 to 2, to fix some problems.
+        super(context, DATABASE_NAME, null, 12); //update 1 to 2, to fix some problems.
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT)");
+        db.execSQL("CREATE TABLE " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT,EMAIL TEXT,ADDRESS TEXT,PHONE NUMBER TEXT)");
     }
 
     @Override
@@ -35,10 +38,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertData(String name) {
-        SQLiteDatabase db = this.getWritableDatabase();
+    public boolean insertData(String name, String email, String phoneNumber, String address) {
+        //Log.d("MyContacts", "Cant insert data1");
+
+        SQLiteDatabase db = this.getReadableDatabase();
         ContentValues contentValues = new ContentValues();
+
+        //Log.d("MyContacts", "Cant insert data2");
         contentValues.put(COL_2, name);
+        contentValues.put(COL_3, email);
+
+        //Log.d("MyContacts", "Cant insert data3");
+        contentValues.put(COL_4, phoneNumber);
+        contentValues.put(COL_5, address);
 
         long result = db.insert(TABLE_NAME, null, contentValues);
         if(result == -1) {
