@@ -18,18 +18,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_1 = "ID";
     public static final String COL_2 = "NAME";
     public static final String COL_3 = "Email";
-    public static final String COL_4 = "Phone Number";
+    public static final String COL_4 = "Number";
     public static final String COL_5 = "Address";
 
 
     public DatabaseHelper(Context context) {
 
-        super(context, DATABASE_NAME, null, 12); //update 1 to 2, to fix some problems.
+        super(context, DATABASE_NAME, null, 99); //version number
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT,EMAIL TEXT,ADDRESS TEXT,PHONE NUMBER TEXT)");
+        db.execSQL("CREATE TABLE " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT,EMAIL TEXT,ADDRESS TEXT,NUMBER TEXT)");
     }
 
     @Override

@@ -71,8 +71,8 @@ public class MainActivity extends AppCompatActivity {
     public void viewData (View v) {
 
         Log.d("My Contact", "viewData is used");
-        Cursor res = myDb.getAllData();
-        if(res.getCount() == 0) {
+        Cursor res = myDb.getAllData(); //length of database
+        if(res.getCount() == 0) { //res = your cursor in SQL, which is a database manipulating object that lets you traverse data on a row by row basis
             showMessage("Error", "No data found in database");
             //Output a message using log.d and Toast
             return;
@@ -80,20 +80,20 @@ public class MainActivity extends AppCompatActivity {
         StringBuffer buffer = new StringBuffer();
         res.moveToFirst();
         for (int i = 0; i < res.getCount(); i++) {
-            for (int j = 0; j < 4; j++) {
-                buffer.append(fields[j-1]);
-                buffer.append(res.getString(j));
-                buffer.append("\n");
+            for (int j = 1; j <= 4; j++) { //loops thru 4 fields.
+                buffer.append(fields[j-1]); //adds data to the array, the array being fields[]. Fields[] is displayed when adding or searching data
+                buffer.append(res.getString(j)); //buffer.append(res.getString(j)) is like the toString method, displaying as a string
+                buffer.append("\n"); //next field
             }
             buffer.append("\n");
             res.moveToNext();
         }
         //display the message using showMessage() call
-        showMessage("My Contacts", buffer.toString());
+        showMessage("My Contacts", buffer.toString()); //shows the buffer
     }
 
 
-    private void showMessage(String title, String message) {
+    private void showMessage(String title, String message) {  //also shows the buffer
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(true);
         builder.setTitle(title);
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
         builder.show();
     }
 
-    public void searchEntry(View v) {
+    public void searchContacts(View v) {
         Log.d("My Contact app", "Search method used");
 
         String search = editSearch.getText().toString();
@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (buffer.toString().equals("")) {
-            showMessage("No match found", "");
+            showMessage("Contact not found", "");
         } else {
             showMessage(" Search Results", buffer.toString());
         }
